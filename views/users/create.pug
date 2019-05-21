@@ -1,0 +1,8 @@
+extends ../layouts/common.pug
+block content
+    div(class="d-flex flex-column justify-content-center align-items-center")
+        h1 Create Friend
+        h5 Name
+        form(action="/users/create", method="POST", class="d-flex")
+            input(type="text", name="name",class="form-control")
+            button(class="btn btn-danger ml-3") Thêm

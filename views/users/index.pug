@@ -1,0 +1,15 @@
+extends ../layouts/common.pug
+block content
+    div(class="d-flex flex-column justify-content-center align-items-center")
+        h1 List Friend
+        form(action="users/search",method="GET",class="form-inline my-2 my-lg-0")
+            input(class="form-control mr-sm-2", type="search", placeholder="Search", aria-label="Search",name="q",value=q)
+            button(class="btn btn-outline-success my-2 my-sm-0", type="submit") Search
+        h3 
+            a(href="users/create") Thêm
+        ul(style="list-style:none;")
+            each user in users
+                li
+                    span=user.name
+                    span &nbsp
+                    a(href='/users/' + user.id) View
