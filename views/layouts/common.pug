@@ -1,5 +1,72 @@
 html
     head
         link(rel="stylesheet",href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.8.2/css/all.css", integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous")
     body
+        nav.navbar.navbar-expand-lg.navbar-light.bg-success.text-white
+            a.navbar-brand(href='#').text-white Nambui
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto.text-white
+                    li.nav-item.active
+                        a.nav-link(href='#').text-white Home 
+                        span.sr-only (current)
+                    li.nav-item
+                        a.nav-link(href='#').text-white Link
+                    li.nav-item
+                        a.nav-link(href='#').text-white Cart
+                if cartsl
+                    .alert.alert-danger(style='padding:0.375rem 0.75rem;',role='alert').m-0.mr-2=cartsl
+                a(href="/cart/cart").text-white
+                    i.fas.fa-shopping-cart.pr-2(style='font-size:2rem;')
+                a(href="/auth/login")
+                    button.btn.btn-danger(type='button').ml-0 Sign In
+                a(href="/auth/createAccount")
+                    button.btn.btn-danger(type='button').ml-2 Create
+                //- button.btn.btn-danger(type='button', data-toggle='modal', data-target='#exampleModalCenterSignIn').ml-2 Sign In
+                //- button.btn.btn-danger(type='button', data-toggle='modal', data-target='#exampleModalCenter').ml-2 Create
+        //- #exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+        //-     .modal-dialog.modal-dialog-centered(role='document').text-dark
+        //-         .modal-content
+        //-             .modal-header
+        //-                 h5#exampleModalLongTitle.modal-title Create Account
+        //-                 button.close(type='button', data-dismiss='modal', aria-label='Close')
+        //-                     span(aria-hidden='true') &times;
+        //-             .modal-body
+        //-                 form(action="/users/create", method="POST",enctype = "multipart/form-data")
+        //-                     div.form-group
+        //-                         label(for="name").m-0 Tên đăng nhập
+        //-                         input(type="text", name="name",class="form-control", value=value ? value.name : "")#name
+        //-                         label(for="phone").m-0.mt-3 Số điện thoại
+        //-                         input(type="text", name="phone",class="form-control", value=value ? value.phone : "")#phone
+        //-                         label(for="phone").m-0.mt-3 Mật khẩu
+        //-                         input(type="PassWord", name="pass",class="form-control")#PassWord
+        //-                         button(class="btn btn-danger").mt-3 Đăng ký
+        //-             .modal-footer
+        //-                 button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+        //-                 button.btn.btn-primary(type='button') Save changes
+        //- #exampleModalCenterSignIn.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+        //-     .modal-dialog.modal-dialog-centered(role='document').text-dark
+        //-         .modal-content
+        //-             .modal-header
+        //-                 h5#exampleModalLongTitle.modal-title Login
+        //-                 button.close(type='button', data-dismiss='modal', aria-label='Close')
+        //-                     span(aria-hidden='true') &times;
+        //-             .modal-body
+        //-                 form(method="POST")
+        //-                     div.form-group
+        //-                         label(for="email").m-0 Email
+        //-                         input(type="text", name="email",class="form-control", value=values ? values.email : "")#email
+        //-                         label(for="PassWord").m-0.mt-3 PassWord
+        //-                         input(type="PassWord", name="PassWord",class="form-control", value=values ? values.PassWord : "")#PassWord
+        //-                         button(class="btn btn-danger").mt-3 Login
+        //-             .modal-footer
+        //-                 button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+        //-                 button.btn.btn-primary(type='button') Save changes
+        script(src="https://kit.fontawesome.com/bcf9646a4d.js")
+        script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
         block content
+        

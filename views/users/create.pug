@@ -2,7 +2,16 @@ extends ../layouts/common.pug
 block content
     div(class="d-flex flex-column justify-content-center align-items-center")
         h1 Create Friend
-        h5 Name
-        form(action="/users/create", method="POST", class="d-flex")
-            input(type="text", name="name",class="form-control")
-            button(class="btn btn-danger ml-3") Thêm
+        if errors
+            each error in errors
+                .alert.alert-danger=error
+        
+        form(action="/users/create", method="POST",enctype = "multipart/form-data")
+            div.form-group
+                label(for="name").m-0 Tên
+                input(type="text", name="name",class="form-control", value=value ? value.name : "")#name
+                label(for="phone").m-0.mt-3 Số điện thoại
+                input(type="text", name="phone",class="form-control", value=value ? value.phone : "")#phone
+                label(for="avatar").m-0.mt-3 Avatar
+                input(type="file", name="avatar",class="form-control-file")#avatar
+                button(class="btn btn-danger").mt-3 Thêm

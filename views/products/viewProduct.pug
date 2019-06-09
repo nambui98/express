@@ -1,0 +1,9 @@
+extends ../layouts/common.pug
+block content
+    h3.text-center.mt-3 Thông tin sản phẩm
+    .fex-direction-row.d-flex.justify-content-center.mt-3
+        img(src=product.image, alt="").pr-3
+        div.position-relative
+            h3=product.name
+            p=product.description
+            a.position-absolute.btn.btn-primary(href='/cart/add/'+product.id,style='bottom:0') Add to Cart

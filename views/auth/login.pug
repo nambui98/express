@@ -1,0 +1,15 @@
+extends ../layouts/common.pug
+block content
+    div(class="d-flex flex-column justify-content-center align-items-center")
+        h1 Sign In
+        if errors
+            each error in errors
+                .alert.alert-danger=error
+        
+        form(method="POST")
+            div.form-group
+                label(for="email").m-0 Email
+                input(type="text", name="email",class="form-control", value=values ? values.email : "")#email
+                label(for="PassWord").m-0.mt-3 PassWord
+                input(type="PassWord", name="PassWord",class="form-control", value=values ? values.PassWord : "")#PassWord
+                button(class="btn btn-danger").mt-3 Login
