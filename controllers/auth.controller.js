@@ -7,6 +7,7 @@ module.exports = {
         var email = req.body.email;
         var PassWord = req.body.PassWord;
         var user = await User.find({ email: email });
+        var users = await User.find()
         if (!user) {
             res.render('auth/login', {
                 errors: [
@@ -29,9 +30,11 @@ module.exports = {
         res.cookie('userId', user.id, {
             signed: true
         });
-        res.render('auth/thanhtoan');
+        res.render('users/index',{
+            users:users
+        });
     },
-    create: (req, res) => {
+    create: (req, res) => { 
         res.render('auth/createAccount')
     },
     postCreate: async(req, res) => {
